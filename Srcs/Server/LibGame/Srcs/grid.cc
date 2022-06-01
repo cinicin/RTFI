@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
-#include "../../libthecore/include/memcpy.h"
-#include "../../common/stl.h"
+#include "../../LibTheCore/Srcs/memcpy.h"
+#include "../../Common/stl.h"
 #include "grid.h"
 
 CGrid::CGrid(int w, int h) : m_iWidth(w), m_iHeight(h)
