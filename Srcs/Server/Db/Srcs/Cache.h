@@ -2,8 +2,8 @@
 #ifndef __INC_DB_CACHE_H__
 #define __INC_DB_CACHE_H__
 
-#include "../../common/cache.h"
-#include "../../common/auction_table.h"
+#include "../../Common/cache.h"
+#include "../../Common/auction_table.h"
 
 class CItemCache : public cache<TPlayerItem>
 {

@@ -16,7 +16,7 @@
 #include "AuctionManager.h"
 #endif
 #include <signal.h>
-
+#undef __FreeBSD__
 void SetPlayerDBName(const char* c_pszPlayerDBName);
 void SetTablePostfix(const char* c_pszTablePostfix);
 int Start();
@@ -48,7 +48,7 @@ int g_iItemPriceListTableCacheFlushSeconds = 540;
 extern const char * _malloc_options;
 #endif
 
-extern void WriteVersion();
+// extern void WriteVersion();
 
 void emergency_sig(int sig)
 {
@@ -63,7 +63,7 @@ void emergency_sig(int sig)
 
 int main()
 {
-	WriteVersion();
+//	WriteVersion();
 
 #ifdef __FreeBSD__
 	_malloc_options = "A";
