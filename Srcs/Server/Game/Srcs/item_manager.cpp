@@ -18,7 +18,7 @@
 #include "item.h"
 #include "item_manager.h"
 
-#include "../../common/VnumHelper.h"
+#include "../../Common/VnumHelper.h"
 #include "DragonSoul.h"
 #include "cube.h"
 
@@ -49,7 +49,7 @@ void ITEM_MANAGER::Destroy()
 
 void ITEM_MANAGER::GracefulShutdown()
 {
-	TR1_NS::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.begin();
+	std::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.begin();
 
 	while (it != m_set_pkItemForDelayedSave.end())
 		SaveSingleItem(*(it++));
@@ -424,7 +424,7 @@ void ITEM_MANAGER::DelayedSave(LPITEM item)
 
 void ITEM_MANAGER::FlushDelayedSave(LPITEM item)
 {
-	TR1_NS::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.find(item);
+	std::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.find(item);
 
 	if (it == m_set_pkItemForDelayedSave.end())
 	{
@@ -469,8 +469,8 @@ void ITEM_MANAGER::SaveSingleItem(LPITEM item)
 
 void ITEM_MANAGER::Update()
 {
-	TR1_NS::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.begin();
-	TR1_NS::unordered_set<LPITEM>::iterator this_it;
+	std::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.begin();
+	std::unordered_set<LPITEM>::iterator this_it;
 
 	while (it != m_set_pkItemForDelayedSave.end())
 	{
@@ -540,7 +540,7 @@ void ITEM_MANAGER::DestroyItem(LPITEM item, const char* file, size_t line)
 		}
 	}
 
-	TR1_NS::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.find(item);
+	std::unordered_set<LPITEM>::iterator it = m_set_pkItemForDelayedSave.find(item);
 
 	if (it != m_set_pkItemForDelayedSave.end())
 		m_set_pkItemForDelayedSave.erase(it);
@@ -897,7 +897,7 @@ bool ITEM_MANAGER::CreateDropItem(LPCHARACTER pkChr, LPCHARACTER pkKiller, std::
 
 		if (it != m_map_pkDropItemGroup.end())
 		{
-			typeof(it->second->GetVector()) v = it->second->GetVector();
+			__typeof(it->second->GetVector()) v = it->second->GetVector();
 
 			for (DWORD i = 0; i < v.size(); ++i)
 			{
@@ -959,7 +959,7 @@ bool ITEM_MANAGER::CreateDropItem(LPCHARACTER pkChr, LPCHARACTER pkKiller, std::
 		{
 			if ( it->second->GetLevelLimit() <= (DWORD)iLevel )
 			{
-				typeof(it->second->GetVector()) v = it->second->GetVector();
+				__typeof(it->second->GetVector()) v = it->second->GetVector();
 
 				for ( DWORD i=0; i < v.size(); i++ )
 				{
@@ -984,7 +984,7 @@ bool ITEM_MANAGER::CreateDropItem(LPCHARACTER pkChr, LPCHARACTER pkKiller, std::
 
 			if (it != m_map_pkGloveItemGroup.end())
 			{
-				typeof(it->second->GetVector()) v = it->second->GetVector();
+				__typeof(it->second->GetVector()) v = it->second->GetVector();
 
 				for (DWORD i = 0; i < v.size(); ++i)
 				{

@@ -44,8 +44,6 @@
 #include "gm.h"
 #include "panama.h"
 #include "map_location.h"
-#include "HackShield.h"
-#include "XTrapManager.h"
 
 #include "DragonSoul.h"
 
@@ -477,20 +475,6 @@ void CInputDB::PlayerLoad(LPDESC d, const char * data)
 			ch->GetGMLevel());
 
 	ch->QuerySafeboxSize();
-
-	if (isHackShieldEnable)
-	{
-		if (! CHackShieldManager::instance().CreateClientHandle(ch->GetPlayerID()))
-		{
-			d->SetPhase(PHASE_CLOSE);
-		}
-		else
-		{
-			ch->StartHackShieldCheckCycle( HackShield_CheckCycleTime );
-		}
-	}
-
-	CXTrapManager::instance().CreateClientSession( ch );
 }
 
 void CInputDB::Boot(const char* data)
@@ -1723,7 +1707,7 @@ void CInputDB::ReloadProto(const char * c_pData)
 
 	CMotionManager::instance().Build();
 
-	CHARACTER_MANAGER::instance().for_each_pc(std::mem_fun(&CHARACTER::ComputePoints));
+	CHARACTER_MANAGER::instance().for_each_pc(std::mem_fn(&CHARACTER::ComputePoints));
 }
 
 void CInputDB::GuildSkillUsableChange(const char* c_pData)
@@ -1995,7 +1979,7 @@ void CInputDB::VCard(const char * c_pData)
 
 	sys_log(0, "VCARD: %u %s %s %s %s", p->dwID, p->szSellCharacter, p->szSellAccount, p->szBuyCharacter, p->szBuyAccount);
 
-	std::auto_ptr<SQLMsg> pmsg(DBManager::instance().DirectQuery("SELECT sell_account, buy_account, time FROM vcard WHERE id=%u", p->dwID));
+	std::unique_ptr<SQLMsg> pmsg(DBManager::instance().DirectQuery("SELECT sell_account, buy_account, time FROM vcard WHERE id=%u", p->dwID));
 	if (pmsg->Get()->uiNumRows != 1)
 	{
 		sys_log(0, "VCARD_FAIL: no data");
@@ -2025,7 +2009,7 @@ void CInputDB::VCard(const char * c_pData)
 		return;
 	}
 
-	std::auto_ptr<SQLMsg> pmsg1(DBManager::instance().DirectQuery("UPDATE GameTime SET LimitTime=LimitTime+%d WHERE UserID='%s'", time, p->szBuyAccount));
+	std::unique_ptr<SQLMsg> pmsg1(DBManager::instance().DirectQuery("UPDATE GameTime SET LimitTime=LimitTime+%d WHERE UserID='%s'", time, p->szBuyAccount));
 
 	if (pmsg1->Get()->uiAffectedRows == 0 || pmsg1->Get()->uiAffectedRows == (uint32_t)-1)
 	{
@@ -2033,7 +2017,7 @@ void CInputDB::VCard(const char * c_pData)
 		return;
 	}
 
-	std::auto_ptr<SQLMsg> pmsg2(DBManager::instance().DirectQuery("UPDATE vcard,GameTime SET sell_pid='%s', buy_pid='%s', buy_account='%s', sell_time=NOW(), new_time=GameTime.LimitTime WHERE vcard.id=%u AND GameTime.UserID='%s'", p->szSellCharacter, p->szBuyCharacter, p->szBuyAccount, p->dwID, p->szBuyAccount));
+	std::unique_ptr<SQLMsg> pmsg2(DBManager::instance().DirectQuery("UPDATE vcard,GameTime SET sell_pid='%s', buy_pid='%s', buy_account='%s', sell_time=NOW(), new_time=GameTime.LimitTime WHERE vcard.id=%u AND GameTime.UserID='%s'", p->szSellCharacter, p->szBuyCharacter, p->szBuyAccount, p->dwID, p->szBuyAccount));
 
 	if (pmsg2->Get()->uiAffectedRows == 0 || pmsg2->Get()->uiAffectedRows == (uint32_t)-1)
 	{
@@ -2671,11 +2655,6 @@ void CInputDB::DetailLog(const TPacketNeedLoginLogInfo* info)
 		if (NULL != pChar)
 		{
 			LogManager::instance().DetailLoginLog(true, pChar);
-
-			if (isHackShieldEnable)
-			{
-				pChar->StartHackShieldCheckCycle( HackShield_FirstCheckWaitTime );
-			}
 		}
 	}
 }

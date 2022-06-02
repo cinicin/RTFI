@@ -2,7 +2,7 @@
 #ifdef __FreeBSD__
 #include <md5.h>
 #else
-#include "../../libthecore/include/xmd5.h"
+#include "../../LibTheCore/Srcs/xmd5.h"
 #endif
 
 #include "utils.h"
@@ -33,7 +33,7 @@
 #include "unique_item.h"
 #include "threeway_war.h"
 #include "log.h"
-#include "../../common/VnumHelper.h"
+#include "../../Common/VnumHelper.h"
 #ifdef __AUCTION__
 #include "auction_manager.h"
 #endif

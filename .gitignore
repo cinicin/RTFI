@@ -4,3 +4,15 @@
 .vscode/*
 .history/
 *.vsix
+# Boost
+Srcs/Extern/Common/Boost_1.79.0/*
+!Srcs/Extern/Common/Boost_1.79.0/README.md
+# Lzo
+Srcs/Extern/Common/Lzo_2.10/*
+!Srcs/Extern/Common/Lzo_2.10/README.md
+# CryptoPP
+Srcs/Extern/Common/CryptoPP_8.6.0/cryptopp/*
+!Srcs/Extern/Common/CryptoPP_8.6.0/cryptopp/GNUmakefile
+# Game & Db
+/Server/Share/Bin/DB
+/Server/Share/Bin/GAME

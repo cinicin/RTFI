@@ -395,7 +395,7 @@ namespace quest
 
 		std::vector <DWORD> dwVnums;
 		std::vector <DWORD> dwCounts;
-		std::vector <LPITEM> item_gets(NULL);
+		std::vector <LPITEM> item_gets;
 		int count = 0;
 
 		ch->GiveItemFromSpecialItemGroup(dwGroupVnum, dwVnums, dwCounts, item_gets, count);
@@ -2100,7 +2100,7 @@ teleport_area:
 
 		char szQuery[1024];
 		snprintf(szQuery, sizeof(szQuery), "SELECT COUNT(*) FROM player%s WHERE name='%s'", get_table_postfix(), szName);
-		std::auto_ptr<SQLMsg> pmsg(DBManager::instance().DirectQuery(szQuery));
+		std::unique_ptr<SQLMsg> pmsg(DBManager::instance().DirectQuery(szQuery));
 
 		if ( pmsg->Get()->uiNumRows > 0 )
 		{

@@ -2,8 +2,8 @@
 
 #include "threeway_war.h"
 
-#include "../../common/length.h"
-#include "../../common/tables.h"
+#include "../../Common/length.h"
+#include "../../Common/tables.h"
 #include "p2p.h"
 #include "locale_service.h"
 #include "packet.h"
@@ -245,7 +245,7 @@ void CThreeWayWar::RandomEventMapSet()
 
 bool CThreeWayWar::IsRegisteredUser(DWORD PlayerID) const
 {
-	boost::unordered_map<DWORD, DWORD>::const_iterator iter = RegisterUserMap_.find(PlayerID);
+	std::unordered_map<DWORD, DWORD>::const_iterator iter = RegisterUserMap_.find(PlayerID);
 
 	if (iter == RegisterUserMap_.end())
 	{

@@ -16,8 +16,8 @@
 #include <tr1/unordered_map>
 #define TR1_NS std::tr1
 #else
-#include <boost/unordered_map.hpp>
-#define TR1_NS boost
+#include <unordered_map>
+#define TR1_NS std
 #endif
 
 #define DBGALLOC_LOG_FILENAME "dbgalloc.log"
@@ -308,7 +308,7 @@ private:
 	}
 #endif
 
-	typedef TR1_NS::unordered_map<void*, AllocTag> AllocMapType;
+	typedef std::unordered_map<void*, AllocTag> AllocMapType;
 
 	Detail detail_;
 	AllocMapType alloc_map_;

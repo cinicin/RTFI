@@ -11,7 +11,7 @@
 #include "locale_service.h"
 #include "arena.h"
 
-#include "../../common/VnumHelper.h"
+#include "../../Common/VnumHelper.h"
 
 bool CHARACTER::StartRiding()
 {
