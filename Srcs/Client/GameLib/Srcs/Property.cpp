@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include <string.h>
-#include "../eterBase/TempFile.h"
+#include "../../EterBase/Srcs/TempFile.h"
 
 #include "PropertyManager.h"
 #include "Property.h"

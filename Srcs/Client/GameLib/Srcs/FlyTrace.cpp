@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "../eterLib/StateManager.h"
-#include "../eterLib/Camera.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterLib/Srcs/Camera.h"
 
 #include "FlyingData.h"
 #include "FlyTrace.h"

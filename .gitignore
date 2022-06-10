@@ -5,15 +5,38 @@ desktop.ini
 .vscode/*
 .history/
 *.vsix
+.vscode/*
+.history/
 # Boost
 Srcs/Extern/Common/Boost_1.79.0/*
 !Srcs/Extern/Common/Boost_1.79.0/README.md
 # Lzo
 Srcs/Extern/Common/Lzo_2.10/*
 !Srcs/Extern/Common/Lzo_2.10/README.md
+!Srcs/Extern/Common/Lzo_2.10/include
 # CryptoPP
 Srcs/Extern/Common/CryptoPP_8.6.0/cryptopp/*
 !Srcs/Extern/Common/CryptoPP_8.6.0/cryptopp/GNUmakefile
-# Game & Db
-/Server/Share/Bin/DB
-/Server/Share/Bin/GAME
+!Srcs/Extern/Common/CryptoPP_8.6.0/cryptopp/cryptoppLibLink.h
+# Server Game & Db
+/Server/Share/Bin/*
+# Client Files
+/Client/lib/*
+/Client/pack/*
+/Client/mark/*
+/Client/pack/*.epk
+/Client/pack/*.eix
+/Client/pack/*.addr
+/Client/syserr.txt
+/Client/channel.inf
+/Client/config.exe
+/Client/log.txt
+/Client/syserr.txt
+/Client/mouse.cfg
+/Client/metin2.cfg
+/Client/RTFIClient_Debug.bsc
+/Client/RTFIClient_Debug.exe
+/Client/RTFIClient_Release.bsc
+/Client/RTFIClient_Release.exe
+/Client/BGM/*
+

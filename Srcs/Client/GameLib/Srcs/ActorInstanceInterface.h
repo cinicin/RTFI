@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../eterGrnLib/ThingInstance.h"
+#include "../../EterGrnLib/Srcs/ThingInstance.h"
 
 class IActorInstance : public CGraphicThingInstance
 {

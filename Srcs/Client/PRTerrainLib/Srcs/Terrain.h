@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "../eterImageLib/TGAImage.h"
+#include "../../EterImageLib/Srcs/TGAImage.h"
 
 #include "TextureSet.h"
 #include "TerrainType.h"

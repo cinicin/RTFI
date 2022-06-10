@@ -2,8 +2,8 @@
 #include "MapOutdoor.h"
 #include "AreaTerrain.h"
 #include "AreaLoaderThread.h"
-#include "../eterLib/ResourceManager.h"
-#include "../EterPack/EterPackManager.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 //CAreaLoaderThread CMapOutdoor::ms_AreaLoaderThread;
 

@@ -4,9 +4,9 @@
 #include "ParticleInstance.h"
 #include "ParticleProperty.h"
 
-#include "../eterlib/GrpScreen.h"
-#include "../eterlib/StateManager.h"
-#include "../eterLib/GrpImageInstance.h"
+#include "../../EterLib/Srcs/GrpScreen.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterLib/Srcs/GrpImageInstance.h"
 #include "EmitterProperty.h"
 
 class CParticleSystemInstance : public CEffectElementBaseInstance

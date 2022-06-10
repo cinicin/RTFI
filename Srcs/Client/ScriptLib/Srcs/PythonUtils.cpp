@@ -1,6 +1,9 @@
 #include "StdAfx.h"
 #include "PythonUtils.h"
 
+#define PyLong_AsLong PyLong_AsLongLong
+#define PyLong_AsUnsignedLong PyLong_AsUnsignedLongLong
+
 IPythonExceptionSender * g_pkExceptionSender = NULL;
 
 bool __PyCallClassMemberFunc_ByCString(PyObject* poClass, const char* c_szFunc, PyObject* poArgs, PyObject** poRet);

@@ -2,9 +2,9 @@
 #include "Locale.h"
 #include "PythonApplication.h"
 #include "resource.h"
-#include "../eterBase/CRC32.h"
-#include "../eterpack/EterPackManager.h"
-#include "../eterLocale/Japanese.h"
+#include "../../EterBase/Srcs/CRC32.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
+#include "../../EterLocale/Srcs/Japanese.h"
 #include <windowsx.h>
 
 const char* LSS_YMIR		= "YMIR";

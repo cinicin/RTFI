@@ -5,7 +5,7 @@
 #include "AbstractPlayer.h"
 #include "packet.h"
 
-#include "../eterLib/Camera.h"
+#include "../../EterLib/Srcs/Camera.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Frame Process

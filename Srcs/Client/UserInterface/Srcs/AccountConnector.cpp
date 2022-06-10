@@ -2,8 +2,8 @@
 #include "AccountConnector.h"
 #include "Packet.h"
 #include "PythonNetworkStream.h"
-#include "../EterBase/tea.h"
-#include "../EterPack/EterPackManager.h"
+#include "../../EterBase/Srcs/tea.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "Hackshield.h"
 #include "WiseLogicXTrap.h"

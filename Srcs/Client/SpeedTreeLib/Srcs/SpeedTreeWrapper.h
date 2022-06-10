@@ -42,8 +42,8 @@
 #include <d3dx8.h>
 #include <vector>
 
-#include "../eterLib/GrpObjectInstance.h"
-#include "../eterLib/GrpImageInstance.h"
+#include "../../EterLib/Srcs/GrpObjectInstance.h"
+#include "../../EterLib/Srcs/GrpImageInstance.h"
 
 #ifndef SAFE_DELETE
 #define SAFE_DELETE(p)       { if (p) { delete (p);     (p) = NULL; } }

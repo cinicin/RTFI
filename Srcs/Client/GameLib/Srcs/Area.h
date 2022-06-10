@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../SpeedTreeLib/SpeedTreeWrapper.h"
-#include "../eterGrnLib/ThingInstance.h"
+#include "../../SpeedTreeLib/Srcs/SpeedTreeWrapper.h"
+#include "../../EterGrnLib/Srcs/ThingInstance.h"
 #include "MapType.h"
 #include "DungeonBlock.h"
 

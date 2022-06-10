@@ -2,8 +2,8 @@
 #include "ActorInstance.h"
 #include "AreaTerrain.h"
 #include "RaceData.h"
-#include "../SpeedTreeLib/SpeedTreeForestDirectX8.h"
-#include "../SpeedTreeLib/SpeedTreeWrapper.h"
+#include "../../SpeedTreeLib/Srcs/SpeedTreeForestDirectX8.h"
+#include "../../SpeedTreeLib/Srcs/SpeedTreeWrapper.h"
 
 enum
 {

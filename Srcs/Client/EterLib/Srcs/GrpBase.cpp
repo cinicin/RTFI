@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "../eterBase/Utils.h"
-#include "../eterBase/Timer.h"
+#include "../../EterBase/Srcs/Utils.h"
+#include "../../EterBase/Srcs/Timer.h"
 #include "GrpBase.h"
 #include "Camera.h"
 #include "StateManager.h"

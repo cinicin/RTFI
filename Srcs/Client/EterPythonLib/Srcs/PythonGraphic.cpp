@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "../eterLib/StateManager.h"
-#include "../eterLib/JpegFile.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterLib/Srcs/JpegFile.h"
 #include "PythonGraphic.h"
 
 bool g_isScreenShotKey = false;
@@ -291,7 +291,7 @@ bool CPythonGraphic::SaveScreenShot(const char * c_pszFileName)
 		lpSurface = NULL;
 	}
 
-	bool bSaved = SaveJPEG(c_pszFileName, pbyBuffer, uWidth, uHeight);
+	bool bSaved = SaveJPEG(c_pszFileName, (LPBYTE)pbyBuffer, uWidth, uHeight);
 
 	if(pbyBuffer) {
 		delete [] pbyBuffer;

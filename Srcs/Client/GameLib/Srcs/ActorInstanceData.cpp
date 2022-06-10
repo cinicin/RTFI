@@ -4,8 +4,8 @@
 #include "ItemManager.h"
 #include "RaceData.h"
 
-#include "../eterlib/ResourceManager.h"
-#include "../etergrnlib/util.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterGrnLib/Srcs/util.h"
 
 DWORD CActorInstance::GetVirtualID()
 {

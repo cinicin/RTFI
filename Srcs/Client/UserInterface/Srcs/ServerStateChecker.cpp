@@ -2,7 +2,7 @@
 #include "Packet.h"
 #include "ServerStateChecker.h"
 
-#include "../eterLib/NetAddress.h"
+#include "../../EterLib/Srcs/NetAddress.h"
 
 #pragma pack(push)
 #pragma pack(1)

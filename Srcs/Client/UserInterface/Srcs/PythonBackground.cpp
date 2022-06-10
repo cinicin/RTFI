@@ -3,11 +3,11 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "../eterlib/CullingManager.h"
-#include "../eterlib/Camera.h"
-#include "../eterPack/EterPackManager.h"
-#include "../gamelib/MapOutDoor.h"
-#include "../gamelib/PropertyLoader.h"
+#include "../../EterLib/Srcs/CullingManager.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
+#include "../../GameLib/Srcs/MapOutDoor.h"
+#include "../../GameLib/Srcs/PropertyLoader.h"
 
 #include "PythonBackground.h"
 #include "PythonCharacterManager.h"

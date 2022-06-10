@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "ModelInstance.h"
 #include "Model.h"
-#include "../EterLib/ResourceManager.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
 
 
 CGrannyModel* CGrannyModelInstance::GetModel()

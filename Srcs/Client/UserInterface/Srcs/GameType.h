@@ -1,5 +1,5 @@
 #pragma once
-#include "../GameLib/ItemData.h"
+#include "../../GameLib/Srcs/ItemData.h"
 
 struct SAffects
 {

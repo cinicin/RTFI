@@ -9,10 +9,10 @@
 #include <crtdbg.h>
 #endif
 
-#include "../eterPack/EterPackManager.h"
-#include "../eterLib/Util.h"
-#include "../CWebBrowser/CWebBrowser.h"
-#include "../eterBase/CPostIt.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
+#include "../../EterLib/Srcs/Util.h"
+#include "../../CWebBrowser/Srcs/CWebBrowser.h"
+#include "../../EterBase/Srcs/CPostIt.h"
 
 #include "CheckLatestFiles.h"
 
@@ -28,7 +28,11 @@ volatile int _AVOID_FLOATING_POINT_LIBRARY_BUG = _fltused;
 #pragma comment(linker, "/NODEFAULTLIB:libci.lib")
 
 #pragma comment( lib, "version.lib" )
-#pragma comment( lib, "python22.lib" )
+#ifdef _DEBUG
+#pragma comment( lib, "python27_d.lib" )
+#else
+#pragma comment( lib, "python27.lib" )
+#endif
 #pragma comment( lib, "imagehlp.lib" )
 #pragma comment( lib, "devil.lib" )
 #pragma comment( lib, "granny2.lib" )

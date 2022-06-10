@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "../gamelib/GameEventManager.h"
+#include "../../GameLib/Srcs/GameEventManager.h"
 
 PyObject * eventMgrUpdate(PyObject * poSelf, PyObject * poArgs)
 {

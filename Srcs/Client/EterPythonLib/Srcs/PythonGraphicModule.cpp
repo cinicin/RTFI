@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "../eterlib/Camera.h"
-#include "../EterLib/TextBar.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../EterLib/Srcs/TextBar.h"
 
 #include <shlobj.h>
 

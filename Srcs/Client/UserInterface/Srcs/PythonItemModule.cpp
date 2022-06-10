@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "PythonItem.h"
 
-#include "../gamelib/ItemManager.h"
+#include "../../GameLib/Srcs/ItemManager.h"
 #include "InstanceBase.h"
 #include "AbstractApplication.h"
 

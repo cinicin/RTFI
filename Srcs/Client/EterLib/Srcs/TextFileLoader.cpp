@@ -1,7 +1,7 @@
 #include "StdAfx.h"
-#include "../eterBase/CRC32.h"
+#include "../../EterBase/Srcs/CRC32.h"
 #include <string>
-#include "../eterPack/EterPackManager.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "Pool.h"
 #include "TextFileLoader.h"

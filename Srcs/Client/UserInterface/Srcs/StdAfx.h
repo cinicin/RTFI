@@ -13,14 +13,14 @@
 #define _USE_32BIT_TIME_T
 #endif
 
-#include "../eterLib/StdAfx.h"
-#include "../eterPythonLib/StdAfx.h"
-#include "../gameLib/StdAfx.h"
-#include "../scriptLib/StdAfx.h"
-#include "../milesLib/StdAfx.h"
-#include "../EffectLib/StdAfx.h"
-#include "../PRTerrainLib/StdAfx.h"
-#include "../SpeedTreeLib/StdAfx.h"
+#include "../../EterLib/Srcs/StdAfx.h"
+#include "../../EterPythonLib/Srcs/StdAfx.h"
+#include "../../GameLib/Srcs/StdAfx.h"
+#include "../../ScriptLib/Srcs/StdAfx.h"
+#include "../../MilesLib/Srcs/StdAfx.h"
+#include "../../EffectLib/Srcs/StdAfx.h"
+#include "../../PRTerrainLib/Srcs/StdAfx.h"
+#include "../../SpeedTreeLib/Srcs/StdAfx.h"
 
 #ifndef __D3DRM_H__
 #define __D3DRM_H__

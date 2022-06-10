@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "PythonBackground.h"
-#include "../eterlib/Camera.h"
+#include "../../EterLib/Srcs/Camera.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ¸Þ¼¼Áö

@@ -1,10 +1,10 @@
 #include "StdAfx.h"
 
-#include "../eterLib/ResourceManager.h"
-#include "../eterLib/StateManager.h"
-#include "../effectLib/EffectManager.h"
-#include "../SpeedTreeLib/SpeedTreeForestDirectX8.h"
-#include "../eterBase/Timer.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EffectLib/Srcs/EffectManager.h"
+#include "../../SpeedTreeLib/Srcs/SpeedTreeForestDirectX8.h"
+#include "../../EterBase/Srcs/Timer.h"
 
 #include "Area.h"
 #include "PropertyManager.h"

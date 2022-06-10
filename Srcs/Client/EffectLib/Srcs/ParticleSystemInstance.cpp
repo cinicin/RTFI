@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "../eterBase/Random.h"
-#include "../eterLib/StateManager.h"
+#include "../../EterBase/Srcs/Random.h"
+#include "../../EterLib/Srcs/StateManager.h"
 #include "ParticleSystemData.h"
 #include "ParticleSystemInstance.h"
 #include "ParticleInstance.h"

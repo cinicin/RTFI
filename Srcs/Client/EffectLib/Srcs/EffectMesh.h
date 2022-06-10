@@ -2,10 +2,10 @@
 
 #include <d3dx8.h>
 
-#include "../eterlib/GrpScreen.h"
-#include "../eterlib/Resource.h"
-#include "../eterlib/GrpImageInstance.h"
-#include "../eterLib/TextFileLoader.h"
+#include "../../EterLib/Srcs/GrpScreen.h"
+#include "../../EterLib/Srcs/Resource.h"
+#include "../../EterLib/Srcs/GrpImageInstance.h"
+#include "../../EterLib/Srcs/TextFileLoader.h"
 
 #include "Type.h"
 #include "EffectElementBase.h"

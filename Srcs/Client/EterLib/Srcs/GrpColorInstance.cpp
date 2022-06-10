@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "GrpColorInstance.h"
-#include "../eterBase/Timer.h"
+#include "../../EterBase/Srcs/Timer.h"
 
 CGraphicColorInstance::CGraphicColorInstance()
 {

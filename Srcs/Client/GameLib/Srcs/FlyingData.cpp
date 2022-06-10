@@ -1,5 +1,5 @@
 #include "Stdafx.h"
-#include "../effectLib/EffectManager.h"
+#include "../../EffectLib/Srcs/EffectManager.h"
 
 #include "FlyingData.h"
 

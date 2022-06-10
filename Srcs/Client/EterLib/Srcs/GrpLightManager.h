@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../eterBase/Singleton.h"
+#include "../../EterBase/Srcs/Singleton.h"
 
 #include "GrpBase.h"
 #include "Util.h"

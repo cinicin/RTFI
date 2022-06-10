@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include <io.h>
-#include "../eterBase/CRC32.h"
-#include "../eterBase/Timer.h"
-#include "../eterBase/Stl.h"
-#include "../eterPack/EterPackManager.h"
+#include "../../EterBase/Srcs/CRC32.h"
+#include "../../EterBase/Srcs/Timer.h"
+#include "../../EterBase/Srcs/Stl.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "ResourceManager.h"
 #include "GrpImage.h"

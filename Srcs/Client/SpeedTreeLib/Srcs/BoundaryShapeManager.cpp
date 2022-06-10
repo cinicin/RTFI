@@ -24,7 +24,7 @@
 #include "StdAfx.h"
 
 #include <windows.h>
-#include "../eterbase/Random.h"
+#include "../../EterBase/Srcs/Random.h"
 #include "BoundaryShapeManager.h"
 
 using namespace std;

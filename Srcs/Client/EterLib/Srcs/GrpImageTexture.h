@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GrpTexture.h"
-#include "../eterImageLib/DXTCImage.h"
+#include "../../EterImageLib/Srcs/DXTCImage.h"
 
 class CGraphicImageTexture : public CGraphicTexture
 {

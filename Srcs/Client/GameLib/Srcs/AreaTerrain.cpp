@@ -1,9 +1,9 @@
 #include "StdAfx.h"
-#include "../PRTerrainLib/StdAfx.h"
+#include "../../PRTerrainLib/Srcs/StdAfx.h"
 
-#include "../eterLib/ResourceManager.h"
-#include "../eterlib/StateManager.h"
-#include "../EterPack/EterPackManager.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "AreaTerrain.h"
 #include "MapOutdoor.h"

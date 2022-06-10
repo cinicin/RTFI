@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "../eterlib/GrpImageInstance.h"
+#include "../../Eterlib/Srcs/GrpImageInstance.h"
 
 #include "Type.h"
 
