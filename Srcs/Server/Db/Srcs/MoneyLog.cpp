@@ -18,7 +18,7 @@ void CMoneyLog::Save()
 		return;
 	for (BYTE bType = 0; bType < MONEY_LOG_TYPE_MAX_NUM; bType ++)
 	{
-		typeof(m_MoneyLogContainer[bType].begin()) it;
+		__typeof(m_MoneyLogContainer[bType].begin()) it;
 		for (it = m_MoneyLogContainer[bType].begin(); it != m_MoneyLogContainer[bType].end(); ++it)
 		{
 			//bType;
