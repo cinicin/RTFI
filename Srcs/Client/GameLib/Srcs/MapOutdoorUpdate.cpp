@@ -1,6 +1,6 @@
 #include "StdAfx.h"
-#include "../eterlib/Camera.h"
-#include "../PRTerrainLib/StdAfx.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../PRTerrainLib/Srcs/StdAfx.h"
 
 #include "MapOutdoor.h"
 #include "TerrainPatch.h"

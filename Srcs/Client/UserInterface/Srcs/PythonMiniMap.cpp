@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "../eterLib/StateManager.h"
-#include "../eterLib/GrpSubImage.h"
-#include "../eterlib/Camera.h"
-#include "../EterPack/EterPackManager.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterLib/Srcs/GrpSubImage.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "PythonMiniMap.h"
 #include "PythonBackground.h"
@@ -11,7 +11,7 @@
 
 #include "AbstractPlayer.h"
 
-#include "../eterPythonLib/PythonWindowManager.h"
+#include "../../EterPythonLib/Srcs/PythonWindowManager.h"
 
 void CPythonMiniMap::AddObserver(DWORD dwVID, float fSrcX, float fSrcY)
 {

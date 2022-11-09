@@ -2,7 +2,7 @@
 #include "PythonPlayer.h"
 #include "PythonApplication.h"
 
-#include "../eterlib/Camera.h"
+#include "../../EterLib/Srcs/Camera.h"
 
 void CPythonPlayer::NEW_SetMouseMoveState(int eMBS)
 {

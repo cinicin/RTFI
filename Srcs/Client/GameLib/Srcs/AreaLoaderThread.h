@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "../eterLib/Mutex.h"
+#include "../../EterLib/Srcs/Mutex.h"
 
 class CTerrain;
 class CArea;

@@ -1,10 +1,10 @@
 #ifndef __INC_METIN_II_TEXTFILELOADER_H__
 #define __INC_METIN_II_TEXTFILELOADER_H__
 
-#include "../eterBase/FileLoader.h"
-#include "../eterBase/MappedFile.h"
-#include "../eterLib/Util.h"
-#include "../eterLib/Pool.h"
+#include "../../EterBase/Srcs/FileLoader.h"
+#include "../../EterBase/Srcs/MappedFile.h"
+#include "../../EterLib/Srcs/Util.h"
+#include "../../EterLib/Srcs/Pool.h"
 
 class CTextFileLoader
 {

@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../eterLib/StdAfx.h"
-#include "../eterGrnLib/StdAfx.h"
+#include "../../EterLib/Srcs/StdAfx.h"
+#include "../../EterGrnLib/Srcs/StdAfx.h"
 
 //#include <crtdbg.h>
 #ifdef _DEBUG
 	#undef _DEBUG
-	#include <Python-2.2/python.h>
+	#include <Python_2.7.18/include/python.h>
 	#define _DEBUG
 #else
-	#include <Python-2.2/python.h>
+	#include <Python_2.7.18/include/python.h>
 #endif
-#include <Python-2.2/node.h>
-#include <Python-2.2/grammar.h>
-#include <Python-2.2/token.h>
-#include <Python-2.2/parsetok.h>
-#include <Python-2.2/errcode.h>
-#include <Python-2.2/compile.h>
-#include <Python-2.2/symtable.h>
-#include <Python-2.2/eval.h>
-#include <Python-2.2/marshal.h>
+#include <Python_2.7.18/include/node.h>
+#include <Python_2.7.18/include/grammar.h>
+#include <Python_2.7.18/include/token.h>
+#include <Python_2.7.18/include/parsetok.h>
+#include <Python_2.7.18/include/errcode.h>
+#include <Python_2.7.18/include/compile.h>
+#include <Python_2.7.18/include/symtable.h>
+#include <Python_2.7.18/include/eval.h>
+#include <Python_2.7.18/include/marshal.h>
 
 #include "PythonUtils.h"
 #include "PythonLauncher.h"

@@ -3,8 +3,8 @@
 #ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #endif
-#include "../EterLib/StdAfx.h"
-#include "../ScriptLib/StdAfx.h"
+#include "../../EterLib/Srcs/StdAfx.h"
+#include "../../ScriptLib/Srcs/StdAfx.h"
 
 #include "PythonGraphic.h"
 #include "PythonWindowManager.h"

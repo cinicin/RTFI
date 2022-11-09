@@ -18,7 +18,7 @@ typedef struct _AHNHS_TRANS_BUFFER
 #pragma pack(pop) // 기존 alignment 복구.
 #endif /* !USE_AHNLAB_HACKSHIELD */
 
-#include "../gamelib/RaceData.h"
+#include "../../GameLib/Srcs/RaceData.h"
 
 typedef BYTE TPacketHeader;
 

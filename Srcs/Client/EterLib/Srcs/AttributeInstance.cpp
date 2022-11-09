@@ -1,5 +1,5 @@
 #include "StdAfx.h"
-#include "../eterBase/Utils.h"
+#include "../../EterBase/Srcs/Utils.h"
 #include "AttributeInstance.h"
 #include "GrpMath.h"
 

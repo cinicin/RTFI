@@ -22,9 +22,9 @@
 #include <cryptopp/cryptoppLibLink.h>
 #pragma warning(pop)
 
-#include "../EterBase/utils.h"
-#include "../EterBase/Debug.h"
-#include "../EterBase/CRC32.h"
+#include "../../EterBase/Srcs/utils.h"
+#include "../../EterBase/Srcs/Debug.h"
+#include "../../EterBase/Srcs/CRC32.h"
 
 #ifdef __THEMIDA__
 #include <ThemidaSDK.h>

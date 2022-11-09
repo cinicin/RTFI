@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../gamelib/ActorInstance.h"
-#include "../gamelib/FlyHandler.h"
+#include "../../GameLib/Srcs/ActorInstance.h"
+#include "../../GameLib/Srcs/FlyHandler.h"
 
 #include "PythonNetworkStream.h"
 #include "InstanceBase.h"

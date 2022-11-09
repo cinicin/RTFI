@@ -46,7 +46,7 @@
 
 #include <vector>
 
-#include "../eterBase/Singleton.h"
+#include "../../EterBase/Srcs/Singleton.h"
 
 #define CHECK_D3DAPI(a)		\
 {							\

@@ -15,9 +15,9 @@
 
 //#include <crtdbg.h>
 
-#include "../eterBase/CRC32.h"
-#include "../eterBase/Utils.h"
-#include "../eterBase/Debug.h"
+#include "../../EterBase/Srcs/CRC32.h"
+#include "../../EterBase/Srcs/Utils.h"
+#include "../../EterBase/Srcs/Debug.h"
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

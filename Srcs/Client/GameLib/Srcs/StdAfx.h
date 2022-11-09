@@ -18,13 +18,13 @@
 #pragma warning(disable:4201 4512 4238 4239)
 #endif
 
-#include "../eterBase/Utils.h"
-#include "../eterBase/CRC32.h"
-#include "../eterBase/Random.h"
+#include "../../EterBase/Srcs/Utils.h"
+#include "../../EterBase/Srcs/CRC32.h"
+#include "../../EterBase/Srcs/Random.h"
 
-#include "../eterLib/StdAfx.h"
-#include "../milesLib/StdAfx.h"
-#include "../effectLib/StdAfx.h"
+#include "../../EterLib/Srcs/StdAfx.h"
+#include "../../MilesLib/Srcs/StdAfx.h"
+#include "../../EffectLib/Srcs/StdAfx.h"
 
 #include "GameType.h"
 #include "GameUtil.h"

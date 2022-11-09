@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../eterLib/parser.h"
+#include "../../EterLib/Srcs/parser.h"
 
 #include <string>
 #include <map>

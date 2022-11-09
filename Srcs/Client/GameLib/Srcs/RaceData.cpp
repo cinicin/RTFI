@@ -1,10 +1,10 @@
 #include "StdAfx.h"
-#include "../eterLib/ResourceManager.h"
-#include "../eterLib/AttributeInstance.h"
-#include "../eterBase/Utils.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterLib/Srcs/AttributeInstance.h"
+#include "../../EterBase/Srcs/Utils.h"
 #include "RaceData.h"
 #include "RaceMotionData.h"
-#include "../eterBase/Filename.h"
+#include "../../EterBase/Srcs/Filename.h"
 
 CDynamicPool<CRaceData> CRaceData::ms_kPool;
 CDynamicPool<CRaceData::TMotionModeData> CRaceData::ms_MotionModeDataPool;

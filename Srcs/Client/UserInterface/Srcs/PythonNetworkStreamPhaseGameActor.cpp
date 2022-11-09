@@ -5,7 +5,7 @@
 
 #include "PythonApplication.h"
 #include "AbstractPlayer.h"
-#include "../gamelib/ActorInstance.h"
+#include "../../GameLib/Srcs/ActorInstance.h"
 
 
 

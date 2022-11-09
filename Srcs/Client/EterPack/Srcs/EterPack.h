@@ -5,7 +5,7 @@
 #include <boost/unordered_map.hpp>
 #include <boost/shared_array.hpp>
 
-#include "../EterBase/MappedFile.h"
+#include "../../EterBase/Srcs/MappedFile.h"
 
 #ifndef MAKEFOURCC
 #define MAKEFOURCC(ch0, ch1, ch2, ch3)                                                  \

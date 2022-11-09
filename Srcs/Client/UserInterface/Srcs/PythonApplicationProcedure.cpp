@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "PythonApplication.h"
-#include "../eterlib/Camera.h"
-#include "../CWebBrowser/CWebBrowser.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../CWebBrowser/Srcs/CWebBrowser.h"
 
 #include <winuser.h>
 

@@ -17,9 +17,9 @@
 
 //#include <crtdbg.h>
 
-#include "../EterLib/StdAfx.h"
-#include "../EterGrnLib/StdAfx.h"
-#include "../scriptLib/StdAfx.h"
+#include "../../EterLib/Srcs/StdAfx.h"
+#include "../../EterGrnLib/Srcs/StdAfx.h"
+#include "../../ScriptLib/Srcs/StdAfx.h"
 
 /* Fast Float<->Integer conversion */
 extern float		PR_FCNV;        

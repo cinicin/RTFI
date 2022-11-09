@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../milesLib/Type.h"
+#include "../../MilesLib/Srcs/Type.h"
 #include "RaceMotionDataEvent.h"
 
 class CRaceMotionData

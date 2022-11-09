@@ -41,9 +41,9 @@
 #pragma comment(lib, "d3d8.lib")
 #pragma comment(lib, "d3dx8.lib")
 
-#include "../eterBase/StdAfx.h"
-#include "../eterBase/Debug.h"
-#include "../eterLocale/CodePageId.h"
+#include "../../EterBase/Srcs/StdAfx.h"
+#include "../../EterBase/Srcs/Debug.h"
+#include "../../EterLocale/Srcs/CodePageId.h"
 
 #ifndef VC_EXTRALEAN
 #include <winsock.h>

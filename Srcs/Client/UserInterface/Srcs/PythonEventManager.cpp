@@ -5,10 +5,10 @@
 
 #include "AbstractApplication.h"
 
-#include "../gamelib/ItemData.h"
-#include "../gamelib/ItemManager.h"
+#include "../../GameLib/Srcs/ItemData.h"
+#include "../../GameLib/Srcs/ItemManager.h"
 
-#include "../eterPack/EterPackManager.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 
 #include "PythonMiniMap.h"
 

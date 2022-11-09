@@ -2,7 +2,7 @@
 #include "PythonNetworkStream.h"
 #include "PythonApplication.h"
 #include "Packet.h"
-#include "../eterpack/EterPackManager.h"
+#include "../../EterPack/Srcs/EterPackManager.h"
 #include "Hackshield.h"
 #include "WiseLogicXTrap.h"
 
@@ -318,8 +318,6 @@ bool CPythonNetworkStream::RecvXTrapVerifyRequest()
 
 	TPacketXTrapCSVerify packet_res;
 	packet_res.bHeader = HEADER_CG_XTRAP_ACK;
-
-	XTrap_ValidateCheckStream( packet.bPacketData, packet_res.bPacketData );
 
 	if (!Send(sizeof(packet_res), &packet_res))
 	{

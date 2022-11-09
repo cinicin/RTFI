@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include "IME.h"
 #include "TextTag.h"
-#include "../eterBase/Utils.h"
+#include "../../EterBase/Srcs/Utils.h"
 #include "msctf.h"
 #include <oleauto.h>
 

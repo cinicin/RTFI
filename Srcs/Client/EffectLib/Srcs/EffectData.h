@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../milesLib/Type.h"
+#include "../../MilesLib/Srcs/Type.h"
 
 #include "ParticleSystemData.h"
 #include "EffectMesh.h"

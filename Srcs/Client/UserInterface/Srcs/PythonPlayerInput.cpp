@@ -2,8 +2,8 @@
 #include "PythonPlayer.h"
 #include "PythonPlayerEventHandler.h"
 #include "PythonApplication.h"
-#include "../eterlib/Camera.h"
-#include "../eterbase/Timer.h"
+#include "../../EterLib/Srcs/Camera.h"
+#include "../../EterBase/Srcs/Timer.h"
 
 const int c_iFastestSendingCount = 3;
 const int c_iSlowestSendingCount = 3;

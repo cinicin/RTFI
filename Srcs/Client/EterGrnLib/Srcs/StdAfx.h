@@ -5,9 +5,9 @@
 //#include <crtdbg.h>
 #include <granny.h>
 
-#include "../eterBase/Utils.h"
-#include "../eterBase/Debug.h"
-#include "../eterBase/Stl.h"
+#include "../../EterBase/Srcs/Utils.h"
+#include "../../EterBase/Srcs/Debug.h"
+#include "../../EterBase/Srcs/Stl.h"
 
 #include "Util.h"
 

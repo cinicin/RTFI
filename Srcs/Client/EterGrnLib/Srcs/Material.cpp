@@ -1,10 +1,10 @@
 #include "StdAfx.h"
 #include "Material.h"
 #include "Mesh.h"
-#include "../eterbase/Filename.h"
-#include "../eterlib/ResourceManager.h"
-#include "../eterlib/StateManager.h"
-#include "../eterlib/GrpScreen.h"
+#include "../../EterBase/Srcs/Filename.h"
+#include "../../EterLib/Srcs/ResourceManager.h"
+#include "../../EterLib/Srcs/StateManager.h"
+#include "../../EterLib/Srcs/GrpScreen.h"
 
 CGraphicImageInstance CGrannyMaterial::ms_akSphereMapInstance[SPHEREMAP_NUM];
 

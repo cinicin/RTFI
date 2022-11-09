@@ -1,9 +1,9 @@
 #pragma once
 
 #ifdef _IMPROVED_PACKET_ENCRYPTION_
-#include "../eterBase/cipher.h"
+#include "../../EterBase/Srcs/cipher.h"
 #endif
-#include "../eterBase/tea.h"
+#include "../../EterBase/Srcs/tea.h"
 #include "NetAddress.h"
 
 class CNetworkStream

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../eterLib/SkyBox.h"
-#include "../eterLib/LensFlare.h"
-#include "../eterLib/ScreenFilter.h"
+#include "../../EterLib/Srcs/SkyBox.h"
+#include "../../EterLib/Srcs/LensFlare.h"
+#include "../../EterLib/Srcs/ScreenFilter.h"
 
-#include "../PRTerrainLib/TerrainType.h"
-#include "../PRTerrainLib/TextureSet.h"
+#include "../../PRTerrainLib/Srcs/TerrainType.h"
+#include "../../PRTerrainLib/Srcs/TextureSet.h"
 
-#include "../SpeedTreeLib/SpeedTreeForestDirectX8.h"
+#include "../../SpeedTreeLib/Srcs/SpeedTreeForestDirectX8.h"
 
 #include "MapBase.h"
 #include "Area.h"

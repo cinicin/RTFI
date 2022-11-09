@@ -26,6 +26,7 @@
     <SccProjectName>Perforce Project</SccProjectName>
     <SccLocalPath>..</SccLocalPath>
     <SccProvider>MSSCCI:Perforce SCM</SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VTune|Win32'" Label="Configuration">
@@ -76,25 +77,29 @@
     <_ProjectFileVersion>17.0.32505.173</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">
-    <OutDir>../bin\</OutDir>
-    <IntDir>.\Distribute\</IntDir>
+    <OutDir>..\..\..\..\Client\</OutDir>
+    <IntDir>$(ProjectDir)ints\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>RTFIClient_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>../bin\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>..\..\..\..\Client\</OutDir>
+    <IntDir>$(ProjectDir)ints\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
+    <TargetName>RTFIClient_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>../bin\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>..\..\..\..\Client\</OutDir>
+    <IntDir>$(ProjectDir)ints\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>RTFIClient_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VTune|Win32'">
-    <OutDir>../bin\</OutDir>
-    <IntDir>.\VTune\</IntDir>
+    <OutDir>..\..\..\..\Client\</OutDir>
+    <IntDir>$(ProjectDir)ints\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>RTFIClient_$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">
     <Midl>
@@ -108,19 +113,19 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../extern/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Include;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Include;..\..\..\Extern\Windows\x86;..\..\..\Extern\Common\CryptoPP_8.6.0;..\..\..\Extern\Windows\x86\Granny_2.4\Include;..\..\..\Extern\Common\Boost_1.79.0;..\..\..\Extern\Windows\x86\Miles_1.08\Include;..\..\..\Extern\Common\Lzo_2.10\include;..\..\..\Extern\Windows\x86\DirectX_8.1b\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;USE_LOD;_DISTRIBUTE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Distribute/UserInterface.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerOutput>All</AssemblerOutput>
-      <AssemblerListingLocation>.\Distribute/</AssemblerListingLocation>
-      <ObjectFileName>.\Distribute/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Distribute/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -131,9 +136,9 @@
     </ResourceCompile>
     <Link>
       <ShowProgress>NotSet</ShowProgress>
-      <OutputFile>Distribute/metin2client.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../extern/lib;../../extern/lib/vc90;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Lib\Windows\x86;..\..\..\Extern\Windows\x86\Python_2.7.18\lib;..\..\..\Extern\Windows\x86\Miles_1.08\Lib;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Lib;..\..\..\Extern\Windows\x86\Granny_2.4\Lib;..\..\..\Extern\Windows\x86\DirectX_8.1b\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
       <AssemblyDebug />
       <ProgramDatabaseFile>.\Distribute/metin2client.pdb</ProgramDatabaseFile>
@@ -144,6 +149,8 @@
       <LargeAddressAware>true</LargeAddressAware>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -160,18 +167,18 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../extern/include;../EterPack;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Include;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Include;..\..\..\Extern\Windows\x86;..\..\..\Extern\Common\CryptoPP_8.6.0;..\..\..\Extern\Windows\x86\Granny_2.4\Include;..\..\..\Extern\Common\Boost_1.79.0;..\..\..\Extern\Windows\x86\Miles_1.08\Include;..\..\..\Extern\Common\Lzo_2.10\include;..\..\..\Extern\Windows\x86\DirectX_8.1b\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;USE_LOD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Debug/UserInterface.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -182,9 +189,9 @@
     </ResourceCompile>
     <Link>
       <ShowProgress>NotSet</ShowProgress>
-      <OutputFile>../bin/metin2client.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../extern/lib;../../extern/lib/vc90;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Lib\Windows\x86;..\..\..\Extern\Windows\x86\Python_2.7.18\lib;..\..\..\Extern\Windows\x86\Miles_1.08\Lib;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Lib;..\..\..\Extern\Windows\x86\Granny_2.4\Lib;..\..\..\Extern\Windows\x86\DirectX_8.1b\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Debug/debug.pdb</ProgramDatabaseFile>
@@ -192,6 +199,9 @@
       <LargeAddressAware>true</LargeAddressAware>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -205,17 +215,17 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../extern/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Include;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Include;..\..\..\Extern\Windows\x86;..\..\..\Extern\Common\CryptoPP_8.6.0;..\..\..\Extern\Windows\x86\Granny_2.4\Include;..\..\..\Extern\Common\Boost_1.79.0;..\..\..\Extern\Windows\x86\Miles_1.08\Include;..\..\..\Extern\Common\Lzo_2.10\include;..\..\..\Extern\Windows\x86\DirectX_8.1b\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;USE_LOD;DUNGEON_WORK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Release/UserInterface.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -226,17 +236,18 @@
     </ResourceCompile>
     <Link>
       <ShowProgress>NotSet</ShowProgress>
-      <OutputFile>Release/metin2client.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../extern/lib;../../extern/lib/vc90;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Lib\Windows\x86;..\..\..\Extern\Windows\x86\Python_2.7.18\lib;..\..\..\Extern\Windows\x86\Miles_1.08\Lib;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Lib;..\..\..\Extern\Windows\x86\Granny_2.4\Lib;..\..\..\Extern\Windows\x86\DirectX_8.1b\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>.\Release/metin2.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
-      <LinkTimeCodeGeneration />
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VTune|Win32'">
@@ -254,19 +265,19 @@
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>../../extern/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Include;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Include;..\..\..\Extern\Windows\x86;..\..\..\Extern\Common\CryptoPP_8.6.0;..\..\..\Extern\Windows\x86\Granny_2.4\Include;..\..\..\Extern\Common\Boost_1.79.0;..\..\..\Extern\Windows\x86\Miles_1.08\Include;..\..\..\Extern\Common\Lzo_2.10\include;..\..\..\Extern\Windows\x86\DirectX_8.1b\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;USE_LOD;__VTUNE__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\VTune/UserInterface.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerOutput>All</AssemblerOutput>
-      <AssemblerListingLocation>.\VTune/</AssemblerListingLocation>
-      <ObjectFileName>.\VTune/</ObjectFileName>
-      <ProgramDataBaseFileName>.\VTune/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -277,9 +288,9 @@
     </ResourceCompile>
     <Link>
       <ShowProgress>NotSet</ShowProgress>
-      <OutputFile>VTune/Metin2VTuned.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../extern/lib;../../extern/lib/vc90;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\Extern\Common\DevIL_1.8.0\Lib\Windows\x86;..\..\..\Extern\Windows\x86\Python_2.7.18\lib;..\..\..\Extern\Windows\x86\Miles_1.08\Lib;..\..\..\Extern\Windows\x86\SpeedTree_1.6.0\Lib;..\..\..\Extern\Windows\x86\Granny_2.4\Lib;..\..\..\Extern\Windows\x86\DirectX_8.1b\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
@@ -287,6 +298,8 @@
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
       <Command>COPY "$(TARGETPATH)" ..\bin</Command>
@@ -382,7 +395,12 @@
     <ClCompile Include="..\Srcs\PythonTextTailModule.cpp" />
     <ClCompile Include="..\Srcs\ServerStateChecker.cpp" />
     <ClCompile Include="..\Srcs\ServerStateCheckerModule.cpp" />
-    <ClCompile Include="..\Srcs\StdAfx.cpp" />
+    <ClCompile Include="..\Srcs\StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='VTune|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\Srcs\UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -587,9 +605,50 @@
     <ResourceCompile Include="Resources\UserInterface.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CWebBrowser\CWebBrowser_VC90.vcxproj">
+    <ProjectReference Include="..\..\CWebBrowser\Proj\CWebBrowser.vcxproj">
       <Project>{d64ae35f-f982-46d4-8e38-09e5c9752955}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EffectLib\Proj\EffectLib.vcxproj">
+      <Project>{790b152d-6582-467f-b767-8603c5a9e613}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterBase\Proj\EterBase.vcxproj">
+      <Project>{678c47dc-b3ef-460e-a932-56f3208fc65e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterGrnLib\Proj\EterGrnLib.vcxproj">
+      <Project>{e1ff7630-628f-4ad0-bf66-f14d86a04035}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterImageLib\Proj\EterImageLib.vcxproj">
+      <Project>{fe95382c-8e3e-40ac-8060-634d1a0d4cf5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterLib\Proj\Eterlib.vcxproj">
+      <Project>{887f89df-a1a2-47df-a869-f3fc84704e3e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterLocale\Proj\EterLocale.vcxproj">
+      <Project>{05207e97-c83a-49c6-8e08-403679963a7b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterPack\Proj\EterPack.vcxproj">
+      <Project>{4950ba04-3877-4f66-bca0-60e00de3770b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EterPythonLib\Proj\EterPythonLib.vcxproj">
+      <Project>{24516a87-8544-46a9-a0c8-0a01269642d9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameLib\Proj\Gamelib.vcxproj">
+      <Project>{1801f0ed-7de6-4175-bf25-6fa98aaa350b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MilesLib\Proj\Mileslib.vcxproj">
+      <Project>{9189ba90-1997-4b47-a673-a54c7df4a4f7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PRTerrainLib\Proj\PRTerrainLib.vcxproj">
+      <Project>{8b1d0dde-a521-4eb2-9544-f606376278cc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ScriptLib\Proj\ScriptLib.vcxproj">
+      <Project>{e682cea2-1d79-4de9-a2ce-6aed27e4170e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SpeedTreeLib\Proj\SpeedTreeLib.vcxproj">
+      <Project>{0fddd886-1eb5-4655-80c3-ef08087faefd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SphereLib\Proj\SphereLib.vcxproj">
+      <Project>{a5d7af9f-0a4f-4ed3-b209-2553b1add17d}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

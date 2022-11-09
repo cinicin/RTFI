@@ -2,8 +2,8 @@
 
 #include "GrpScreen.h"
 
-#include "../eterbase/Singleton.h"
-#include "../SphereLib/spherepack.h"
+#include "../../EterBase/Srcs/Singleton.h"
+#include "../../SphereLib/Srcs/spherepack.h"
 
 class CGraphicObjectInstance;
 template <class T>

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../eterLib/FuncObject.h"
-#include "../eterlib/NetStream.h"
-#include "../eterLib/NetPacketHeaderMap.h"
+#include "../../EterLib/Srcs/FuncObject.h"
+#include "../../EterLib/Srcs/NetStream.h"
+#include "../../EterLib/Srcs/NetPacketHeaderMap.h"
 
 #include "InsultChecker.h"
 

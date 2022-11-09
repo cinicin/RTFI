@@ -1,7 +1,7 @@
 #pragma 
 
-#include "../EterLib/NetStream.h"
-#include "../EterLib/FuncObject.h"
+#include "../../EterLib/Srcs/NetStream.h"
+#include "../../EterLib/Srcs/FuncObject.h"
 
 class CAccountConnector : public CNetworkStream, public CSingleton<CAccountConnector>
 {

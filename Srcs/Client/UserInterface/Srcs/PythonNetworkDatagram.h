@@ -1,8 +1,8 @@
 #pragma once
 
 /*
-#include "../eterLib/NetDatagramReceiver.h"
-#include "../eterLib/NetDatagramSender.h"
+#include "../../EterLib/Srcs/NetDatagramReceiver.h"
+#include "../../EterLib/Srcs/NetDatagramSender.h"
 #include "Packet.h"
 
 class CPythonNetworkDatagram : public CSingleton<CPythonNetworkDatagram>
