@@ -15,11 +15,7 @@
 #include "questmanager.h"
 #include "questlua.h"
 #include "locale_service.h"
-#include "XTrapManager.h"
-
-#ifndef __GNUC__
 #include <boost/bind.hpp>
-#endif
 
 CHARACTER_MANAGER::CHARACTER_MANAGER() :
 	m_iVIDCount(0),
@@ -647,9 +643,6 @@ struct FuncUpdateAndResetChatCounter
 void CHARACTER_MANAGER::Update(int iPulse)
 {
 	using namespace std;
-#ifdef __GNUC__
-	using namespace __gnu_cxx;
-#endif
 
 	BeginPendingDestroy();
 
@@ -660,12 +653,7 @@ void CHARACTER_MANAGER::Update(int iPulse)
 			// 컨테이너 복사
 			CHARACTER_VECTOR v;
 			v.reserve(m_map_pkPCChr.size());
-#ifdef __GNUC__
-			transform(m_map_pkPCChr.begin(), m_map_pkPCChr.end(), back_inserter(v), select2nd<NAME_MAP::value_type>());
-#else
 			transform(m_map_pkPCChr.begin(), m_map_pkPCChr.end(), back_inserter(v), boost::bind(&NAME_MAP::value_type::second, _1));
-#endif
-
 			if (0 == (iPulse % PASSES_PER_SEC(5)))
 			{
 				FuncUpdateAndResetChatCounter f;
@@ -674,7 +662,7 @@ void CHARACTER_MANAGER::Update(int iPulse)
 			else
 			{
 				//for_each(v.begin(), v.end(), mem_fun(&CFSM::Update));
-				for_each(v.begin(), v.end(), bind2nd(mem_fun(&CHARACTER::UpdateCharacter), iPulse));
+				for_each(v.begin(), v.end(), std::bind(&CHARACTER::UpdateCharacter, std::placeholders::_1, iPulse));
 			}
 		}
 
@@ -687,12 +675,8 @@ void CHARACTER_MANAGER::Update(int iPulse)
 		{
 			CHARACTER_VECTOR v;
 			v.reserve(m_set_pkChrState.size());
-#ifdef __GNUC__
-			transform(m_set_pkChrState.begin(), m_set_pkChrState.end(), back_inserter(v), identity<CHARACTER_SET::value_type>());
-#else
 			v.insert(v.end(), m_set_pkChrState.begin(), m_set_pkChrState.end());
-#endif
-			for_each(v.begin(), v.end(), bind2nd(mem_fun(&CHARACTER::UpdateStateMachine), iPulse));
+			for_each(v.begin(), v.end(), std::bind(&CHARACTER::UpdateStateMachine, std::placeholders::_1, iPulse));
 		}
 	}
 
@@ -702,8 +686,7 @@ void CHARACTER_MANAGER::Update(int iPulse)
 
 		if (CHARACTER_MANAGER::instance().GetCharactersByRaceNum(xmas::MOB_SANTA_VNUM, i))
 		{
-			for_each(i.begin(), i.end(),
-					bind2nd(mem_fun(&CHARACTER::UpdateStateMachine), iPulse));
+			for_each(i.begin(), i.end(), std::bind(&CHARACTER::UpdateStateMachine, std::placeholders::_1, iPulse));
 		}
 	}
 
@@ -1099,16 +1082,10 @@ void CHARACTER_MANAGER::FlushPendingDestroy()
 CharacterVectorInteractor::CharacterVectorInteractor(const CHARACTER_SET & r)
 {
 	using namespace std;
-#ifdef __GNUC__
-	using namespace __gnu_cxx;
-#endif
 
 	reserve(r.size());
-#ifdef __GNUC__
-	transform(r.begin(), r.end(), back_inserter(*this), identity<CHARACTER_SET::value_type>());
-#else
 	insert(end(), r.begin(), r.end());
-#endif
+
 
 	if (CHARACTER_MANAGER::instance().BeginPendingDestroy())
 		m_bMyBegin = true;

@@ -87,7 +87,7 @@ class SECTREE
 
 		template <class _Func> LPENTITY	find_if (_Func & func) const
 		{
-			LPSECTREE_LIST::iterator it_tree = m_neighbor_list.begin();
+			auto it_tree = m_neighbor_list.begin();
 
 			while (it_tree != m_neighbor_list.end())
 			{

@@ -19,7 +19,6 @@
 #include "dev_log.h"
 #include "db.h"
 #include "skill_power.h"
-#include "check_server.h"
 
 using std::string;
 
@@ -265,7 +264,7 @@ bool GetIPInfo()
 
 		char * netip = inet_ntoa(sai->sin_addr);
 
-		if (!strncmp(netip, "192.168", 7)) // ignore if address is starting with 192
+		if (!strncmp(netip, "888.888", 7)) // ignore if address is starting with 192
 		{
 			strlcpy(g_szInternalIP, netip, sizeof(g_szInternalIP));
 #ifndef __WIN32__
@@ -432,7 +431,7 @@ void config_init(const string& st_localeServiceName)
 			const char * line = two_arguments(value_string, db_host[0], sizeof(db_host[0]), db_user[0], sizeof(db_user[0]));
 			line = two_arguments(line, db_pwd[0], sizeof(db_pwd[0]), db_db[0], sizeof(db_db[0]));
 
-			if (NULL != line[0])
+			if (line[0])
 			{
 				char buf[256];
 				one_argument(line, buf, sizeof(buf));
@@ -456,7 +455,7 @@ void config_init(const string& st_localeServiceName)
 			const char * line = two_arguments(value_string, db_host[1], sizeof(db_host[1]), db_user[1], sizeof(db_user[1]));
 			line = two_arguments(line, db_pwd[1], sizeof(db_pwd[1]), db_db[1], sizeof(db_db[1]));
 
-			if (NULL != line[0])
+			if (line[0])
 			{
 				char buf[256];
 				one_argument(line, buf, sizeof(buf));
@@ -480,7 +479,7 @@ void config_init(const string& st_localeServiceName)
 			const char * line = two_arguments(value_string, log_host, sizeof(log_host), log_user, sizeof(log_user));
 			line = two_arguments(line, log_pwd, sizeof(log_pwd), log_db, sizeof(log_db));
 
-			if (NULL != line[0])
+			if (line[0])
 			{
 				char buf[256];
 				one_argument(line, buf, sizeof(buf));
@@ -560,7 +559,7 @@ void config_init(const string& st_localeServiceName)
 		char szQuery[512];
 		snprintf(szQuery, sizeof(szQuery), "SELECT mKey, mValue FROM locale");
 
-		std::auto_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
+		std::unique_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
 
 		if (pMsg->Get()->uiNumRows == 0)
 		{
@@ -625,7 +624,7 @@ void config_init(const string& st_localeServiceName)
 	{
 		char szQuery[256];
 		snprintf(szQuery, sizeof(szQuery), "SELECT mValue FROM locale WHERE mKey='SKILL_POWER_BY_LEVEL'");
-		std::auto_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
+		std::unique_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
 
 		if (pMsg->Get()->uiNumRows == 0)
 		{
@@ -666,7 +665,7 @@ void config_init(const string& st_localeServiceName)
 		for (int job = 0; job < JOB_MAX_NUM * 2; ++job)
 		{
 			snprintf(szQuery, sizeof(szQuery), "SELECT mValue from locale where mKey='SKILL_POWER_BY_LEVEL_TYPE%d' ORDER BY CAST(mValue AS unsigned)", job);
-			std::auto_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
+			std::unique_ptr<SQLMsg> pMsg(AccountDB::instance().DirectQuery(szQuery));
 
 			// 세팅이 안되어있으면 기본테이블을 사용한다.
 			if (pMsg->Get()->uiNumRows == 0)
@@ -1051,47 +1050,6 @@ void config_init(const string& st_localeServiceName)
 		{
 			str_to_number(g_noticeBattleZone, value_string);
 		}
-
-		TOKEN("hackshield_enable")
-		{
-			int flag = 0;
-
-			str_to_number(flag, value_string);
-
-			//if (1 == flag && LC_IsEurope() )
-			if (1 == flag)
-			{
-				isHackShieldEnable = true;
-			}
-		}
-
-		TOKEN("hackshield_first_check_time")
-		{
-			int secs = 30;
-			str_to_number(secs, value_string);
-
-			HackShield_FirstCheckWaitTime = passes_per_sec * secs;
-		}
-
-		TOKEN("hackshield_check_cycle_time")
-		{
-			int secs = 180;
-			str_to_number(secs, value_string);
-
-			HackShield_CheckCycleTime = passes_per_sec * secs;
-		}
-
-		TOKEN("xtrap_enable")
-		{
-			int flag = 0;
-			str_to_number(flag, value_string);
-
-			if (1 == flag )
-			{
-				bXTrapEnabled = true;
-			}
-		}
-
 		TOKEN("pk_protect_level")
 		{
 		    str_to_number(PK_PROTECT_LEVEL, value_string);
@@ -1121,11 +1079,11 @@ void config_init(const string& st_localeServiceName)
 			continue;
 		}
 
-		TOKEN("server_key")
-		{
-			CheckServer::AddServerKey(value_string);
-			continue;
-		}
+		// TOKEN("server_key")
+		// {
+		// 	CheckServer::AddServerKey(value_string);
+		// 	continue;
+		// }
 	}
 
 	if (g_setQuestObjectDir.empty())

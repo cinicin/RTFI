@@ -1,9 +1,9 @@
 #ifndef __INC_METIN_II_CHAR_H__
 #define __INC_METIN_II_CHAR_H__
 
-#include <boost/unordered_map.hpp>
+#include <unordered_map>
 
-#include "../../common/stl.h"
+#include "../../Common/stl.h"
 #include "entity.h"
 #include "FSM.h"
 #include "horse_rider.h"
@@ -455,7 +455,7 @@ struct TSkillUseInfo
 	DWORD   dwVID;
 	bool    isGrandMaster;
 
-	boost::unordered_map<VID, size_t> TargetVIDMap;
+	std::unordered_map<DWORD, size_t> TargetVIDMap;
 
 	TSkillUseInfo()
 		: iHitCount(0), iMaxHitCount(0), iSplashCount(0), dwNextSkillUsableTime(0), iRange(0), bUsed(false),
@@ -1449,7 +1449,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		//
 	protected:
 		TPlayerSkill*					m_pSkillLevels;
-		boost::unordered_map<BYTE, int>		m_SkillDamageBonus;
+		std::unordered_map<BYTE, int>		m_SkillDamageBonus;
 		std::map<int, TSkillUseInfo>	m_SkillUseInfo;
 
 		////////////////////////////////////////////////////////////////////////////////////////

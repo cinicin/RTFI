@@ -41,7 +41,7 @@
 #include "safebox.h"
 #include "shop.h"
 
-#include "../../common/VnumHelper.h"
+#include "../../Common/VnumHelper.h"
 #include "DragonSoul.h"
 #include "buff_on_attributes.h"
 #include "belt_inventory_helper.h"
@@ -1962,7 +1962,7 @@ bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 					DWORD dwBoxVnum = item2->GetVnum();
 					std::vector <DWORD> dwVnums;
 					std::vector <DWORD> dwCounts;
-					std::vector <LPITEM> item_gets(NULL);
+					std::vector <LPITEM> item_gets;
 					int count = 0;
 
 					if (GiveItemFromSpecialItemGroup(dwBoxVnum, dwVnums, dwCounts, item_gets, count))
@@ -2026,7 +2026,7 @@ bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 				DWORD dwBoxVnum = item->GetVnum();
 				std::vector <DWORD> dwVnums;
 				std::vector <DWORD> dwCounts;
-				std::vector <LPITEM> item_gets(NULL);
+				std::vector <LPITEM> item_gets;
 				int count = 0;
 
 				if (dwBoxVnum == 50033 && LC_IsYMIR()) // 알수없는 상자
@@ -3609,7 +3609,7 @@ bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 									DWORD dwBoxVnum = item->GetVnum();
 									std::vector <DWORD> dwVnums;
 									std::vector <DWORD> dwCounts;
-									std::vector <LPITEM> item_gets(NULL);
+									std::vector <LPITEM> item_gets;
 									int count = 0;
 
 
@@ -3633,7 +3633,7 @@ bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 									DWORD dwBoxVnum = item->GetVnum();
 									std::vector <DWORD> dwVnums;
 									std::vector <DWORD> dwCounts;
-									std::vector <LPITEM> item_gets(NULL);
+									std::vector <LPITEM> item_gets;
 									int count = 0;
 
 
@@ -3656,7 +3656,7 @@ bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 									DWORD dwBoxVnum = 50011;
 									std::vector <DWORD> dwVnums;
 									std::vector <DWORD> dwCounts;
-									std::vector <LPITEM> item_gets(NULL);
+									std::vector <LPITEM> item_gets;
 									int count = 0;
 
 									if (GiveItemFromSpecialItemGroup(dwBoxVnum, dwVnums, dwCounts, item_gets, count))

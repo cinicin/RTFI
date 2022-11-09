@@ -16,7 +16,7 @@
 #ifdef __FreeBSD__
 #include <md5.h>
 #else
-#include "../../libthecore/include/xmd5.h"
+#include "../../LibTheCore/Srcs/xmd5.h"
 #endif
 
 #include "auth_brazil.h"

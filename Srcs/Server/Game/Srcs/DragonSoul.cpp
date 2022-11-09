@@ -12,7 +12,13 @@
 #include <boost/lexical_cast.hpp>
 
 typedef std::vector <std::string> TTokenVector;
+template <typename T> T MINMAX(T min, T value, T max)
+{
+	T tv;
 
+	tv = (min > value ? min : value);
+	return (max < tv) ? max : tv;
+}
 int Gamble(std::vector<float>& vec_probs)
 {
 	float range = 0.f;
@@ -355,7 +361,7 @@ bool DSManager::ExtractDragonHeart(LPCHARACTER ch, LPITEM pItem, LPITEM pExtract
 	}
 
 	float fCharge = vec_chargings[idx] * (100 + iBonus) / 100.f;
-	fCharge = std::MINMAX <float> (0.f, fCharge, 100.f);
+	fCharge = MINMAX <float> (0.f, fCharge, 100.f);
 
 	if (fCharge < FLT_EPSILON)
 	{
@@ -376,7 +382,7 @@ bool DSManager::ExtractDragonHeart(LPCHARACTER ch, LPITEM pItem, LPITEM pExtract
 		if (NULL == pDH)
 		{
 			sys_err ("Cannot create DRAGON_HEART(%d).", DRAGON_HEART_VNUM);
-			return NULL;
+			return false;
 		}
 
 		pItem->SetCount(pItem->GetCount() - 1);

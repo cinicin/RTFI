@@ -22,7 +22,7 @@
 #include "locale_service.h"
 #include "BlueDragon.h"
 
-#include "../../common/VnumHelper.h"
+#include "../../Common/VnumHelper.h"
 
 BOOL g_test_server;
 extern LPCHARACTER FindVictim(LPCHARACTER pkChr, int iMaxDistance);
