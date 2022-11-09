@@ -1,0 +1,6 @@
+# Only For ME HAHAHA
+/Taslak/*
+# VS Code
+.vscode/*
+.history/
+*.vsix
